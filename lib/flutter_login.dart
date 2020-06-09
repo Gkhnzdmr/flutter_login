@@ -608,6 +608,7 @@ class _FlutterLoginState extends State<FlutterLogin>
                         onSubmit: _reverseHeaderAnimation,
                         onSubmitCompleted: widget.onSubmitAnimationCompleted,
                         onPressedSignUp: widget.onPressedSignUp,
+                        onSignUpCompleted: widget.onSignUpAnimationCompleted,
                         hideButtonForgotPassword:
                             widget.hideButtonForgotPassword,
                         hideButtonSignUp: widget.hideButtonSignUp,

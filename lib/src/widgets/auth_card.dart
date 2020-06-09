@@ -523,7 +523,6 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
     }
 
     widget?.onSubmitCompleted();
-    widget?.onSignUpCompleted();
     return true;
   }
 

@@ -222,8 +222,8 @@ class FlutterLogin extends StatefulWidget {
     this.showDebugButtons = false,
     this.headerMarginBottom = 15,
     this.headerMarginTop = 0,
-    this.hideButtonForgotPassword = false,
-    this.hideButtonSignUp = false,
+    this.hideButtonForgotPassword = true,
+    this.hideButtonSignUp = true,
   }) : super(key: key);
 
   /// Called when the user hit the submit button when in sign up mode

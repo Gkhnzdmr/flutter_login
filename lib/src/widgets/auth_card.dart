@@ -350,6 +350,7 @@ class _LoginCard extends StatefulWidget {
     @required this.onSwitchRecoveryPassword,
     this.onSwitchAuth,
     this.onSubmitCompleted,
+    this.onSignUpCompleted,
     this.onPressedSignUp,
     this.hideButtonForgotPassword,
     this.hideButtonSignUp,
@@ -361,6 +362,7 @@ class _LoginCard extends StatefulWidget {
   final Function onSwitchRecoveryPassword;
   final Function onSwitchAuth;
   final Function onSubmitCompleted;
+   final Function onSignUpCompleted;
   final Function onPressedSignUp;
   final bool hideButtonForgotPassword;
   final bool hideButtonSignUp;

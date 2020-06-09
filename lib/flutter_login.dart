@@ -216,6 +216,7 @@ class FlutterLogin extends StatefulWidget {
     this.emailValidator,
     this.passwordValidator,
     this.onSubmitAnimationCompleted,
+    this.onSignUpAnimationCompleted,
     this.logoTag,
     this.titleTag,
     this.showDebugButtons = false,
@@ -262,6 +263,7 @@ class FlutterLogin extends StatefulWidget {
   /// Called after the submit animation's completed. Put your route transition
   /// logic here. Recommend to use with [logoTag] and [titleTag]
   final Function onSubmitAnimationCompleted;
+  final Function onSignUpAnimationCompleted;
 
   /// Hero tag for logo image. If not specified, it will simply fade out when
   /// changing route
@@ -290,7 +292,7 @@ class FlutterLogin extends StatefulWidget {
   final bool hideButtonSignUp;
 
   static final FormFieldValidator<String> defaultEmailValidator = (value) {
-    if (value.isEmpty|| value.length < 5) {
+    if (value.isEmpty || value.length < 5) {
       return 'Kullanıcı adınız eksik!';
     }
     return null;
@@ -563,7 +565,7 @@ class _FlutterLoginState extends State<FlutterLogin>
         widget.emailValidator ?? FlutterLogin.defaultEmailValidator;
     final passwordValidator =
         widget.passwordValidator ?? FlutterLogin.defaultPasswordValidator;
-    
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(
@@ -598,19 +600,24 @@ class _FlutterLoginState extends State<FlutterLogin>
                     Positioned(
                       child: AuthCard(
                         key: authCardKey,
-                        padding: EdgeInsets.only(top: cardTopPosition + logoMarginTop),
+                        padding: EdgeInsets.only(
+                            top: cardTopPosition + logoMarginTop),
                         loadingController: _loadingController,
                         emailValidator: emailValidator,
                         passwordValidator: passwordValidator,
                         onSubmit: _reverseHeaderAnimation,
                         onSubmitCompleted: widget.onSubmitAnimationCompleted,
                         onPressedSignUp: widget.onPressedSignUp,
-                        hideButtonForgotPassword: widget.hideButtonForgotPassword,
+                        hideButtonForgotPassword:
+                            widget.hideButtonForgotPassword,
                         hideButtonSignUp: widget.hideButtonSignUp,
                       ),
                     ),
                     Positioned(
-                      top: cardTopPosition - headerHeight - logoMarginBottom + logoMarginTop,
+                      top: cardTopPosition -
+                          headerHeight -
+                          logoMarginBottom +
+                          logoMarginTop,
                       child: _buildHeader(headerHeight, loginTheme),
                     ),
                   ],

@@ -303,7 +303,7 @@ class AuthCardState extends State<AuthCard> with TickerProviderStateMixin {
                         widget?.onSubmitCompleted();
                       });
                     },
-                    onPressedSignUp:  () {
+                    onPressedSignUp: () {
                       _forwardChangeRouteAnimation().then((_) {
                         widget?.onSignUpCompleted();
                       });
@@ -362,7 +362,7 @@ class _LoginCard extends StatefulWidget {
   final Function onSwitchRecoveryPassword;
   final Function onSwitchAuth;
   final Function onSubmitCompleted;
-   final Function onSignUpCompleted;
+  final Function onSignUpCompleted;
   final Function onPressedSignUp;
   final bool hideButtonForgotPassword;
   final bool hideButtonSignUp;
@@ -523,7 +523,7 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
     }
 
     widget?.onSubmitCompleted();
-
+    widget?.onSignUpCompleted();
     return true;
   }
 

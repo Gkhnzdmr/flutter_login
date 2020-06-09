@@ -290,15 +290,15 @@ class FlutterLogin extends StatefulWidget {
   final bool hideButtonSignUp;
 
   static final FormFieldValidator<String> defaultEmailValidator = (value) {
-    if (value.isEmpty || !Regex.email.hasMatch(value)) {
-      return 'Invalid email!';
+    if (value.isEmpty|| value.length <= 5) {
+      return 'Kullanıcı adınız eksik!';
     }
     return null;
   };
 
   static final FormFieldValidator<String> defaultPasswordValidator = (value) {
     if (value.isEmpty || value.length <= 2) {
-      return 'Password is too short!';
+      return 'Şifreniz Çok Kısa!';
     }
     return null;
   };

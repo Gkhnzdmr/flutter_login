@@ -29,7 +29,7 @@ class AuthCard extends StatefulWidget {
     this.onSubmit,
     this.onSubmitCompleted,
     this.onPressedSignUp,
-    this.onSignUpCompleted
+    this.onSignUpCompleted,
     this.hideButtonForgotPassword,
     this.hideButtonSignUp,
   }) : super(key: key);
